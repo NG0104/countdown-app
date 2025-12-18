@@ -1,0 +1,25 @@
+body {
+    background: #f0f4ff;
+    font-family: "Segoe UI", Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 40px;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.timer {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+}
+
+canvas {
+    max-width: 400px;
+    max-height: 250px;
+    margin: 0 auto;
+    display: block;
+}

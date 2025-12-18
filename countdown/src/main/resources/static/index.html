@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <title>イベントカウントダウン</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- ★重要：defer を必ず付ける -->
+    <script src="countdown.js" defer></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 24px;
+            background: #f7f9fc;
+            color: #12202b;
+        }
+
+        h1 { margin-bottom: 8px; }
+
+        select {
+            padding: 6px 10px;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .countdown {
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 14px;
+            padding: 18px;
+            margin: 16px auto;
+            max-width: 760px;
+            box-shadow: 0 6px 18px rgba(8, 20, 40, 0.06);
+        }
+
+        canvas {
+            display: block;
+            margin: 12px auto;
+            max-width: 720px;
+        }
+
+        .progress-item {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .progress-title {
+            display: inline-block;
+            width: 40px;
+            font-weight: bold;
+        }
+
+        .progress-bar {
+            display: inline-block;
+            width: calc(100% - 60px);
+            height: 16px;
+            background: #ddd;
+            border-radius: 10px;
+            margin-left: 8px;
+        }
+
+        .progress-bar > div {
+            height: 100%;
+            background: #4e79a7;
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.6s;
+        }
+
+        .progress-label {
+            margin-left: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1 id="title">イベントカウントダウン</h1>
+
+<!-- イベント選択 -->
+<div class="container">
+    <h3>イベント選択</h3>
+    <select id="eventSelect"></select>
+</div>
+
+<div id="countdownText" class="countdown">読み込み中…</div>
+
+<div class="container">
+    <h2>経過日数・残り日数（棒グラフ）</h2>
+    <canvas id="barChart"></canvas>
+</div>
+
+<div class="container">
+    <h2>円グラフ</h2>
+    <canvas id="pieChart"></canvas>
+</div>
+
+<div class="container">
+    <h2>ドーナツグラフ</h2>
+    <canvas id="doughnutChart"></canvas>
+</div>
+
+<div class="container">
+    <h2>日数推移</h2>
+    <canvas id="lineChart"></canvas>
+</div>
+
+<div class="container">
+    <h2>残り時間の目安</h2>
+
+    <div class="progress-item">
+        <span class="progress-title">月</span>
+        <div class="progress-bar"><div id="bar-month"></div></div>
+        <span id="label-month" class="progress-label"></span>
+    </div>
+
+    <div class="progress-item">
+        <span class="progress-title">週</span>
+        <div class="progress-bar"><div id="bar-week"></div></div>
+        <span id="label-week" class="progress-label"></span>
+    </div>
+
+    <div class="progress-item">
+        <span class="progress-title">日</span>
+        <div class="progress-bar"><div id="bar-day"></div></div>
+        <span id="label-day" class="progress-label"></span>
+    </div>
+
+    <div class="progress-item">
+        <span class="progress-title">時</span>
+        <div class="progress-bar"><div id="bar-hour"></div></div>
+        <span id="label-hour" class="progress-label"></span>
+    </div>
+</div>
+
+</body>
+</html>
