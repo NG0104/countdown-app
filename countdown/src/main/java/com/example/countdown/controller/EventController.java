@@ -65,7 +65,14 @@ public class EventController {
                         "卒業論文要旨提出",
                         LocalDateTime.of(2025, 4, 1, 0, 0),
                         LocalDateTime.of(2026, 1, 31, 23, 59)
+                ),
+                new EventFull(
+                        4,
+                        "25歳になるまで",
+                        LocalDateTime.of(2004, 1, 4, 0, 0),
+                        LocalDateTime.of(2029, 1, 4, 0, 0)
                 )
         );
     }
+
 }
