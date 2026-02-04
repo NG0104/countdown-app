@@ -50,7 +50,7 @@ public class EventController {
         return List.of(
                 new EventFull(
                         1,
-                        "生まれてから社会人開始まで",
+                        "生まれてから社会人開始",
                         LocalDateTime.of(2004, 1, 4, 0, 0),
                         LocalDateTime.of(2026, 4, 1, 0, 0)
                 ),
@@ -68,7 +68,7 @@ public class EventController {
                 ),
                 new EventFull(
                         4,
-                        "25歳になるまで",
+                        "25歳になる",
                         LocalDateTime.of(2004, 1, 4, 0, 0),
                         LocalDateTime.of(2029, 1, 4, 0, 0)
                 )

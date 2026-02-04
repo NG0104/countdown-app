@@ -110,8 +110,13 @@ function updateCountdownOnly() {
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
 
+    const name = selectedEvent.name.endsWith("まで")
+        ? selectedEvent.name
+        : selectedEvent.name + "まで";
+
     document.getElementById("countdownText").textContent =
-        `${selectedEvent.name}まで ${days}日 ${hours}時間 ${minutes}分 ${seconds}秒`;
+        `${name} ${days}日 ${hours}時間 ${minutes}分 ${seconds}秒`;
+
 }
 
 // ==============================
